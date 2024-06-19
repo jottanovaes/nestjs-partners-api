@@ -33,3 +33,18 @@ Content-Type: application/json
 
 ###
 DELETE {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05
+
+
+###
+GET {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05/spots
+
+###
+GET {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05/spots/6bcd00c2-2833-4d90-93c7-9169f7f5ddb8
+
+###
+POST {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05/spots
+Content-Type: application/json
+
+{
+  "name": "A1"
+}
