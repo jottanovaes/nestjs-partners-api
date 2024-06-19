@@ -1,1 +1,35 @@
-http://localhost:3000/events/
+@baseurl = http://localhost:3000/events
+
+###
+GET {{baseurl}}
+
+###
+GET {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05
+
+###
+# @name createEvent
+POST {{baseurl}}
+Content-Type: application/json
+
+{
+  "name": "Event 1",
+  "description": "Event 1 description",
+  "date": "2021-12-31T23:59:59.999Z",
+  "price": 100
+}
+
+@eventId = {{ createEvent.response.body.id }}
+
+###
+PATCH  {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05
+Content-Type: application/json
+
+{
+  "name": "Event 1 - Edited",
+  "description": "Event 1 description",
+  "date": "2021-12-31T23:59:59.999Z",
+  "price": 150
+}
+
+###
+DELETE {{baseurl}}/0dc8d34b-2759-4dbe-aa0f-a47027734b05
